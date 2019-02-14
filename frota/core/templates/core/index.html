@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+{%block body%}
+<div class="row">
+  <h1> Lista de Condutores Autorizados</h1>
+  <table>
+    <thead>
+       <tr>
+          <th>Nome do Usuário</th>
+          <th>Departamento</th>
+          <th>Tipo de Usuarios</th>
+          <th>Categoria da CNH</th>
+        </tr>
+     </thead>
+     <tbody>
+        {%for t in condutores%}
+           <tr>
+              <td>{{ t.nome}}</td>
+              <td>{{t.departamento}}</td>
+              <td>{{t.tipo}}</td>
+              <td>{{t.cnhcat}}</td>
+           </tr>
+        {% endfor %}
+    <tbody>
+ </table>
+</div>
+{% endblock body%}

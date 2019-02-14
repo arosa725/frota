@@ -1,0 +1,62 @@
+{% extends "base.html"%}
+{% load widget_tweaks %}
+{%block body%}
+  <form class="" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   <h1>Cadastro de Autorizados</h1>
+   <div class="cadastros-group" border:solid 1px>
+
+      <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="{{form.nome.id_for_label}}">Nome</label>
+            {{form.nome|add_class:"form-control"}}
+         </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="{{form.departamento.id_for_label}}">Departamento</label>
+          {{form.departamento|add_class:"form-control"}}
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="{{form.departamento.id_for_label}}">Tipo</label>
+          {{form.tipo|add_class:"form-control"}}
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="{{form.departamento.id_for_label}}">CNH Categoria</label>
+            {{form.cnhcat|add_class:"form-control"}}
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="{{form.departamento.id_for_label}}">E-Mail</label>
+            {{form.email|add_class:"form-control"}}
+        </div>
+
+        <div class="form-group col-md-6">
+           <label for="{{form.departamento.id_for_label}}">Telenone</label>
+           {{form.telefone|add_class:"form-control"}}
+        </div>
+
+        <div class="form-group col-md-6">
+           <label for="{{form.cnh.id_for_label}}">CNH</label>
+           {{form.cnh|add_class:"form-control"}}
+        </div>
+
+        <div class="form-group col-md-6">
+           <label for="{{form.aut.id_for_label}}">Autorização</label>
+           {{form.aut|add_class:"form-control"}}
+        </div>
+
+
+      </div>
+     </div>
+
+  <div class="form-group col-md-12">
+     <button type="submit" class="btn btn-primary">Salvar</button>
+  </div>
+ </div>
+ <br>
+</form>
+{% endblock body%}

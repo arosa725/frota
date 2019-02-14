@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{% load widget_tweaks %}
+{%block body%}
+<br>
+  <form class="" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   <h1>Cadastro de Departamentos</h1>
+   <div class="cadastros-group" border:solid 1px>
+    
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="{{form.nome.id_for_label}}">Nome</label>
+            {{form.nome|add_class:"form-control"}}
+         </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="{{form.centrocusto.id_for_label}}">Centro de Custo</label>
+            {{form.centrocusto|add_class:"form-control"}}
+         </div>
+      </div>
+
+   <button type="submit" class="btn btn-primary">Salvar</button>
+   </div>
+   <br>
+</form>
+{% endblock body%}

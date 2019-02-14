@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+{%block body%}
+<div class="row">
+ 
+  <table border="0">
+    <thead>
+       <tr>
+          <th width="1100"><h1>Lista de Departamentos</h1></th>
+          <th><a href="{% url 'veiculos:novo-departamento' %}" class="btn btn-primary"> Novo</a></th>
+        </tr>
+     </thead>
+ </table>
+
+  <table class="table">
+    <thead>
+       <tr>
+          <th>Departamento</th>
+          <th>Centro de Custo</th>
+          <th colspan="2" style="text-align:center">Ações</th>
+        </tr>
+     </thead>
+     <tbody>
+        {% for c in deptos%}
+           <tr>
+              <td  width="900">{{ c.nome}}</td>
+              <td  width="150">{{c.centrocusto}}</td>
+              <td><a href="{% url 'veiculos:deleta_departamento' c.id %}" class="btn btn-info btn-xs"> Editar</a></td>
+              <td><a href="{% url 'veiculos:deleta_departamento' c.id %}" class="btn btn-danger btn-xs"> Excluir</a></td>
+           </tr>
+        {% endfor %}
+     </tbody>
+ </table>
+</div>
+{% endblock body%}

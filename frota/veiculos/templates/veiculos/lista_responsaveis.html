@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+{%block body%}
+<div class="row">
+  <h1> Lista de Responsáveis</h1>
+  <table class="table">
+    <thead>
+       <tr>
+          <th>Nome</th>
+          <th>Departamento</th>
+          <th>Tipo</th>
+          <th>Categoria CNH</th>
+          <!--
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>CNH</th>
+          <th>AUT</th>
+          -->
+        <th><a href="{% url 'veiculos:novo-responsavel' %}" class="btn btn-primary"> Novo</a></th>
+        </tr>
+
+     </thead>
+     <tbody>
+        {% for d in colaborador%}
+           <tr>
+              <td>{{ d.nome}} </td>
+              <td>{{ d.departamento}}</td>
+              <td>{{ d.get_tipo_display}}</td>
+              <td>{{ d.get_cnhcat_display}}</td>
+          <!--
+              <td>{{ d.email}}</td>
+              <td>{{ d.telefone}}</td>
+              <td>{{ d.cnh}}</td>
+              <td>{{ d.aut}}</td>
+            -->
+           </tr>
+        {% endfor %}
+     </tbody>
+ </table>
+ <a href="{% url 'veiculos:novo-responsavel' %}" class="btn"> Novo</a>
+</div>
+{% endblock body%}
